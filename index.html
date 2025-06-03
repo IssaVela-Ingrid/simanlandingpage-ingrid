@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siman El Salvador - Promociones Exclusivas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/siman-logo.png" type="image/png">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/siman-logo.png" alt="Logo de Siman" width="120">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="ofertas-tecnologia.html">Tecnología</a></li>
+                    <li><a href="ofertas-hogar.html">Hogar</a></li>
+                    <li><a href="ofertas-moda.html">Moda</a></li>
+                    <li><a href="#suscripcion">Suscríbete</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Abrir menú de navegación">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>¡Descubre las Ofertas Exclusivas de Siman!</h1>
+                    <p>No te pierdas los descuentos más increíbles en tus marcas favoritas. ¡Solo por tiempo limitado!</p>
+                    <a href="#promociones-destacadas" class="btn btn-primary">Ver Todas las Promociones</a>
+                </div>
+                <div class="hero-image">
+                    <img src="images/siman.jpeg" alt="Promoción destacada de Siman">
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="container">
+                <h2>Conoce más sobre nuestras Mega Ofertas</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/oYFU3ZYqVyU?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="promociones-destacadas" class="promotions-section">
+            <div class="container">
+                <h2>Promociones Destacadas</h2>
+                <div class="promotions-grid">
+                    <article class="promo-card">
+                        <img src="images/tecnologia.jpg" alt="Oferta en Tecnología">
+                        <h3>Hasta 30% OFF en Tecnología</h3>
+                        <p>Smartphones, laptops, televisores y más. ¡Renueva tus gadgets favoritos!</p>
+                        <a href="ofertas-tecnologia.html" class="btn btn-secondary">Ver Ofertas</a>
+                    </article>
+                    <article class="promo-card">
+                        <img src="images/hogar.jpg" alt="Oferta en Hogar">
+                        <h3>Decora tu Hogar con Descuentos</h3>
+                        <p>Muebles, línea blanca y accesorios para el hogar. ¡Ambientes que inspiran!</p>
+                        <a href="ofertas-hogar.html" class="btn btn-secondary">Ver Ofertas</a>
+                    </article>
+                    <article class="promo-card">
+                        <img src="images/moda.jpeg" alt="Oferta en Moda">
+                        <h3>Moda para Toda la Familia</h3>
+                        <p>Ropa, calzado y accesorios con descuentos de temporada. ¡Estilo a tu alcance!</p>
+                        <a href="ofertas-moda.html" class="btn btn-secondary">Ver Ofertas</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="suscripcion" class="subscription-section">
+            <div class="container">
+                <h2>¡Sé el primero en enterarte de nuestras ofertas!</h2>
+                <p>Suscríbete a nuestro boletín para recibir promociones exclusivas directamente en tu email.</p>
+                <form class="subscription-form">
+                    <input type="email" placeholder="Tu correo electrónico" required aria-label="Ingresa tu correo electrónico">
+                    <button type="submit" class="btn btn-primary">Suscribirme</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>📞 (503) 2250-5000</p>
+                <p>📍 Centro Comercial Multiplaza, San Salvador</p>
+            </div>
+            <div class="footer-col">
+                <h3>Síguenos</h3>
+                <ul class="social-links">
+                    <li><a href="#" aria-label="Facebook de Siman">Facebook</a></li>
+                    <li><a href="#" aria-label="Instagram de Siman">Instagram</a></li>
+                    <li><a href="#" aria-label="Twitter de Siman">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Siman El Salvador. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
