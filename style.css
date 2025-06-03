@@ -1,0 +1,679 @@
+/* Variables de Colores y Tipografías */
+:root {
+    --color-siman-rojo: #E60023; /* Rojo principal de Siman */
+    --color-siman-rojo-oscuro: #B3001C; /* Tono más oscuro para hover/activos */
+    --color-siman-blanco: #FFFFFF;
+    --color-siman-negro: #333333; /* Texto principal */
+    --color-siman-gris-claro: #F8F8F8; /* Fondo de secciones */
+    --color-siman-gris-oscuro: #666666; /* Texto secundario */
+    --color-siman-dorado: #FFD700; /* Color de acento/resaltar */
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* Base y Reseteo Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-siman-negro);
+    line-height: 1.6;
+    background-color: var(--color-siman-blanco);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-siman-rojo);
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--color-siman-rojo);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-siman-rojo-oscuro);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Elimina espacio extra debajo de las imágenes */
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+
+.btn-primary {
+    background-color: var(--color-siman-rojo);
+    color: var(--color-siman-blanco);
+    border: 2px solid var(--color-siman-rojo);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-siman-rojo-oscuro);
+    border-color: var(--color-siman-rojo-oscuro);
+}
+
+.btn-secondary {
+    background-color: var(--color-siman-blanco);
+    color: var(--color-siman-rojo);
+    border: 2px solid var(--color-siman-rojo);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-siman-rojo);
+    color: var(--color-siman-blanco);
+}
+
+/* === HEADER === */
+.main-header {
+    background-color: var(--color-siman-blanco);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* Ajusta el tamaño del logo */
+    width: auto;
+}
+
+.main-nav .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav .nav-list li a {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-siman-negro);
+    padding: 5px 0;
+    position: relative;
+}
+
+.main-nav .nav-list li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-siman-rojo);
+    transition: width 0.3s ease;
+}
+
+.main-nav .nav-list li a:hover::after,
+.main-nav .nav-list li a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto en desktop */
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--color-siman-negro);
+}
+
+/* === HERO SECTION === */
+.hero-section {
+    background-color: var(--color-siman-gris-claro);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 3.5em;
+    color: var(--color-siman-rojo);
+    margin-bottom: 0.5em;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    color: var(--color-siman-negro);
+    margin-bottom: 1.5em;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* === VIDEO SECTION === */
+.video-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--color-siman-blanco);
+}
+
+.video-section h2 {
+    margin-bottom: 40px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    background-color: #000; /* Fondo negro mientras carga */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* === PROMOTIONS SECTION === */
+.promotions-section {
+    padding: 60px 0;
+    background-color: var(--color-siman-gris-claro);
+    text-align: center;
+}
+
+.promotions-section h2 {
+    margin-bottom: 40px;
+}
+
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center; /* Centra las tarjetas si hay espacio */
+}
+
+.promo-card {
+    background-color: var(--color-siman-blanco);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: left;
+    padding-bottom: 20px; /* Espacio para el botón */
+    display: flex;
+    flex-direction: column; /* Para que el botón quede abajo */
+}
+
+.promo-card img {
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio */
+    margin-bottom: 15px;
+}
+
+.promo-card h3 {
+    font-size: 1.5em;
+    margin: 0 20px 10px;
+    color: var(--color-siman-rojo);
+}
+
+.promo-card p {
+    color: var(--color-siman-gris-oscuro);
+    margin: 0 20px 20px;
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio restante */
+}
+
+.promo-card .btn {
+    margin: 0 20px;
+    width: calc(100% - 40px); /* Ocupa el ancho completo dentro del padding */
+}
+
+.promo-card .price-old {
+    text-decoration: line-through;
+    color: var(--color-siman-gris-oscuro);
+    font-size: 0.9em;
+    margin-left: 20px;
+}
+
+.promo-card .price-new {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--color-siman-rojo);
+    margin-left: 20px;
+    display: block; /* Para que aparezca en una nueva línea */
+    margin-top: 5px;
+}
+
+/* === SUBSCRIPTION SECTION === */
+.subscription-section {
+    background-color: var(--color-siman-rojo);
+    color: var(--color-siman-blanco);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.subscription-section h2 {
+    color: var(--color-siman-blanco);
+    margin-bottom: 20px;
+}
+
+.subscription-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.subscription-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.subscription-form input[type="email"] {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1em;
+    color: var(--color-siman-negro);
+}
+
+.subscription-form button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-siman-dorado); /* Color de acento para el botón */
+    color: var(--color-siman-negro);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.subscription-form button:hover {
+    background-color: #e5c100; /* Tono más oscuro del dorado */
+}
+
+
+/* === FOOTER === */
+.main-footer {
+    background-color: var(--color-siman-negro);
+    color: var(--color-siman-blanco);
+    padding: 40px 0 20px;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que las columnas se envuelvan */
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px; /* Ancho mínimo para las columnas del footer */
+}
+
+.footer-col h3 {
+    color: var(--color-siman-blanco);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.footer-col p {
+    margin-bottom: 8px;
+    color: var(--color-siman-gris-claro);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li a {
+    color: var(--color-siman-gris-claro);
+    padding: 5px 0;
+    display: block;
+}
+
+.footer-col ul li a:hover {
+    color: var(--color-siman-blanco);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links li a {
+    display: inline-block;
+    color: var(--color-siman-blanco);
+    font-size: 1.2em;
+    /* Puedes usar iconos de Font Awesome aquí si quieres */
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+    color: var(--color-siman-gris-claro);
+}
+
+/* === ESTILOS PARA SUBPÁGINAS === */
+.subpage-content {
+    padding-top: 40px; /* Espacio extra para que no se pegue al header */
+    min-height: calc(100vh - 200px); /* Para que el footer no suba en páginas cortas */
+}
+
+.page-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--color-siman-gris-claro);
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 40px;
+}
+
+.page-hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.page-hero p {
+    font-size: 1.1em;
+    color: var(--color-siman-negro);
+}
+
+
+/* === DISEÑO RESPONSIVE === */
+
+/* Tablets (hasta 768px) */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+
+    .header-content {
+        flex-wrap: wrap; /* Permite que el logo y el nav se envuelvan */
+        justify-content: center;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .main-nav {
+        width: 100%;
+        text-align: center;
+        display: none; /* Oculto por defecto en móvil */
+        flex-direction: column;
+        background-color: var(--color-siman-blanco);
+        position: absolute;
+        top: 70px; /* Debajo del header */
+        left: 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    .main-nav.active {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+
+    .main-nav .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-nav .nav-list li a {
+        padding: 10px 20px;
+        display: block;
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el botón de menú */
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .promotions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Más pequeñas en tablets */
+    }
+
+    .subscription-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subscription-form input[type="email"],
+    .subscription-form button {
+        width: 90%; /* Ocupa más ancho en móviles */
+        max-width: 350px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-col {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Teléfonos Móviles (hasta 480px) */
+@media (max-width: 480px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.7em; }
+    h3 { font-size: 1.3em; }
+
+    .hero-section {
+        padding: 50px 0;
+    }
+
+    .promotions-section {
+        padding: 40px 0;
+    }
+
+    .subscription-section {
+        padding: 50px 0;
+    }
+
+    .promo-card img {
+        height: 180px;
+    }
+
+    .page-hero {
+        padding: 40px 15px;
+    }
+
+    .page-hero h1 {
+        font-size: 2.5em;
+    }
+} /* <-- ¡Este cierre es el de la media query de 480px! */
+
+
+/* --- Estilos para el Carrusel de Ofertas --- */
+/* ESTO VA FUERA DE CUALQUIER MEDIA QUERY PRINCIPAL */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Ancho máximo para el carrusel */
+    margin: 40px auto 60px auto; /* Centrar y añadir margen */
+    overflow: hidden;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.carousel-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 400px; /* Altura fija, ajusta si tus banners tienen otra proporción */
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    z-index: 10;
+}
+
+.carousel-controls button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.8em;
+    border-radius: 50%;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carousel-indicators span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-indicators span.active {
+    background-color: var(--color-siman-rojo);
+    transform: scale(1.2);
+}
+
+/* Media Queries para Carrusel (ajustes responsive) */
+@media (max-width: 768px) {
+    .carousel-slide img {
+        height: 300px;
+    }
+    .carousel-controls button {
+        padding: 8px 12px;
+        font-size: 1.5em;
+    }
+    .carousel-indicators {
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-slide img {
+        height: 220px;
+    }
+    .carousel-controls button {
+        padding: 6px 10px;
+        font-size: 1.2em;
+    }
+    .carousel-container {
+        margin: 20px auto 40px auto;
+    }
+}
